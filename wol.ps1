@@ -1,5 +1,5 @@
 ## Sendet ein Magic Packet an eine bestimmte MAC-Adresse 
-## Erwartet eine MAC-Adresse als Eingabeparameter
+
 
 # Mac-Adresse
 $MacAddress = "BC2411703225"
