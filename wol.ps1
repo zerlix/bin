@@ -5,31 +5,29 @@
 $MacAddress = "BC2411703225"
 
 
-try
-    {
-        # Broadcast-Adresse des Netzwerks ermitteln
-        $Broadcast = [System.Net.IPAddress]::Broadcast
+try {
+    # Broadcast-Adresse des Netzwerks ermitteln
+    $Broadcast = [System.Net.IPAddress]::Broadcast
 
-        # UDP-Client erstellen
-        $UdpClient = New-Object Net.Sockets.UdpClient
+    # UDP-Client erstellen
+    $UdpClient = New-Object Net.Sockets.UdpClient
 
-        # Endpunkt für den Port 9 erstellen (Standardport für Wake-on-LAN)
-        $IPEndPoint = New-Object Net.IPEndPoint $Broadcast, 9
+    # Endpunkt für den Port 9 erstellen (Standardport für Wake-on-LAN)
+    $IPEndPoint = New-Object Net.IPEndPoint $Broadcast, 9
 
-        # MAC-Adresse in ein Byte-Array umwandeln
-        $MAC = [Net.NetworkInformation.PhysicalAddress]::Parse($MacAddress.ToUpper())
+    # MAC-Adresse in ein Byte-Array umwandeln
+    $MAC = [Net.NetworkInformation.PhysicalAddress]::Parse($MacAddress.ToUpper())
 
-        # Magic Packet konstruieren
-        $Packet = [Byte[]](,0xFF*6) + ($MAC.GetAddressBytes()*16)
+    # Magic Packet konstruieren
+    $Packet = [Byte[]](, 0xFF * 6) + ($MAC.GetAddressBytes() * 16)
 
-        # Magic Packet über UDP an den Endpunkt senden
-        $UdpClient.Send($Packet, $Packet.Length, $IPEndPoint) | Out-Null
-        $UdpClient.Close()
+    # Magic Packet über UDP an den Endpunkt senden
+    $UdpClient.Send($Packet, $Packet.Length, $IPEndPoint) | Out-Null
+    $UdpClient.Close()
         
-        Write-Host "Magic Packet erfolgreich an MAC-Adresse $MacAddress gesendet."
-    }
-    catch
-    {
-        Write-Error "Fehler beim Senden des Magic Packets an MAC-Adresse  $MacAddress"
-    }
+    Write-Host "Magic Packet erfolgreich an MAC-Adresse $MacAddress gesendet."
+}
+catch {
+    Write-Error "Fehler beim Senden des Magic Packets an MAC-Adresse  $MacAddress"
+}
     
