@@ -1,5 +1,33 @@
 ## wol.ps1
-Das Skript sendet ein sogenanntes "Magic Packet" an eine bestimmte MAC-Adresse. Ein Magic Packet ist ein spezielles Netzwerkpaket, das an Wake-on-LAN (WoL) unterstützten Geräten gesendet wird, um sie aus dem Ruhezustand zu wecken.
+**Sendet ein Magic Packet an eine bestimmte MAC-Adresse**
+
+Dieses PowerShell-Skript sendet ein sogenanntes "Magic Packet" an eine spezifizierte MAC-Adresse, um ein Gerät über das Netzwerk zu aktivieren (z. B. für Wake-on-LAN).
+
+**Verwendung:**
+
+1. Ersetzen Sie den Wert der Variablen `$macAddress` durch die MAC-Adresse des Zielsystems, an das das Magic Packet gesendet werden soll.
+2. Führen Sie das Skript in einer PowerShell-Umgebung mit ausreichenden Berechtigungen aus.
+
+**Hinweis:**
+
+- Stellen Sie sicher, dass das Zielsystem und das sendende System im selben Netzwerksegment oder über Routing erreichbar sind.
+- Überprüfen Sie die Firewall-Einstellungen, um sicherzustellen, dass UDP-Pakete auf Port 7 zugelassen sind, falls erforderlich.
+- Dieses Skript funktioniert nur unter Windows, da es PowerShell verwendet.
+
+**Beispiel:**
+
+```powershell
+$macAddress = "88D7F678891C"
+```
+
+**Ausgabe:**
+
+Das Skript gibt eine Erfolgsmeldung aus, wenn das Magic Packet erfolgreich an die angegebene MAC-Adresse gesendet wurde. Im Fehlerfall wird eine entsprechende Fehlermeldung ausgegeben.
+
+**Hinweis:**
+
+Dieses Skript funktioniert unter Windows und erfordert PowerShell. Es kann auf anderen Betriebssystemen oder in Umgebungen, in denen PowerShell nicht verfügbar ist, nicht ausgeführt werden.
+
 
 ##  installDockerOnDebian.sh
 **Automatisierte Docker- und Portainer-Installation für Debian**
