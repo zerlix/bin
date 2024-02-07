@@ -20,6 +20,9 @@ Dieses PowerShell-Skript sendet ein sogenanntes "Magic Packet" an eine spezifizi
 **Verwendung:**
 
 1. Ersetzen Sie den Wert der Variablen `$macAddress` durch die MAC-Adresse des Zielsystems, an das das Magic Packet gesendet werden soll.
+```powershell
+$macAddress = "88D7F678891C"
+```
 2. Führen Sie das Skript in einer PowerShell-Umgebung mit ausreichenden Berechtigungen aus.
 
 **Hinweis:**
@@ -27,12 +30,6 @@ Dieses PowerShell-Skript sendet ein sogenanntes "Magic Packet" an eine spezifizi
 - Stellen Sie sicher, dass das Zielsystem und das sendende System im selben Netzwerksegment oder über Routing erreichbar sind.
 - Überprüfen Sie die Firewall-Einstellungen, um sicherzustellen, dass UDP-Pakete auf Port 7 zugelassen sind, falls erforderlich.
 - Dieses Skript funktioniert nur unter Windows, da es PowerShell verwendet.
-
-**Beispiel:**
-
-```powershell
-$macAddress = "88D7F678891C"
-```
 
 **Ausgabe:**
 
