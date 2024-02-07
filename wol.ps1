@@ -13,7 +13,7 @@ try {
     $UdpClient = New-Object Net.Sockets.UdpClient
 
     # Endpunkt für den Port 9 erstellen (Standardport für Wake-on-LAN)
-    $IPEndPoint = New-Object Net.IPEndPoint $Broadcast, 9
+    $IPEndPoint = New-Object Net.IPEndPoint $Broadcast, 7
 
     # MAC-Adresse in ein Byte-Array umwandeln
     $MAC = [Net.NetworkInformation.PhysicalAddress]::Parse($MacAddress.ToUpper())
