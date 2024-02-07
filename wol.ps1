@@ -2,7 +2,7 @@
 
 
 # Mac-Adresse
-$MacAddress = "BC2411703225"
+$MacAddress = "88D7F678891C"
 
 
 try {
