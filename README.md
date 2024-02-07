@@ -25,16 +25,12 @@ $macAddress = "88D7F678891C"
 ```
 2. Führen Sie das Skript in einer PowerShell-Umgebung mit ausreichenden Berechtigungen aus.
 
-**Hinweis:**
-
-- Stellen Sie sicher, dass das Zielsystem und das sendende System im selben Netzwerksegment oder über Routing erreichbar sind.
-- Überprüfen Sie die Firewall-Einstellungen, um sicherzustellen, dass UDP-Pakete auf Port 7 zugelassen sind, falls erforderlich.
-- Dieses Skript funktioniert nur unter Windows, da es PowerShell verwendet.
-
 **Ausgabe:**
 
 Das Skript gibt eine Erfolgsmeldung aus, wenn das Magic Packet erfolgreich an die angegebene MAC-Adresse gesendet wurde. Im Fehlerfall wird eine entsprechende Fehlermeldung ausgegeben.
 
 **Hinweis:**
 
-Dieses Skript funktioniert unter Windows und erfordert PowerShell. Es kann auf anderen Betriebssystemen oder in Umgebungen, in denen PowerShell nicht verfügbar ist, nicht ausgeführt werden.
+- Stellen Sie sicher, dass das Zielsystem und das sendende System im selben Netzwerksegment oder über Routing erreichbar sind.
+- Überprüfen Sie die Firewall-Einstellungen, um sicherzustellen, dass UDP-Pakete auf Port 7 zugelassen sind, falls erforderlich.
+- Dieses Skript funktioniert nur unter Windows, da es PowerShell verwendet.
