@@ -12,7 +12,7 @@ try {
     # UDP-Client erstellen
     $UdpClient = New-Object Net.Sockets.UdpClient
 
-    # Endpunkt für den Port 9 erstellen (Standardport für Wake-on-LAN)
+    # Endpunkt für den Port 7 erstellen (Standardport für Wake-on-LAN)
     $IPEndPoint = New-Object Net.IPEndPoint $Broadcast, 7
 
     # MAC-Adresse in ein Byte-Array umwandeln
