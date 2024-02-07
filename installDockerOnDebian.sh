@@ -64,13 +64,11 @@ fi
 
 
 if [ $? -eq 0 ]; then
-    echo -e "\e[32mPortainer wurde erfolgreich installiert.\e[0m"
+    echo -e "\e[32mPortainer wurde erfolgreich installiert und ist jetzt unter \e[34mhttps://$ip_address:9443\e[0m \e[32mzu erreichen.\e[0m"
 else
     echo -e "\e[31mEs gab Probleme bei der Portainer-Installation.\e[0m"
     exit 1
 fi
-
-echo -e "\e[32mPortainer ist jetzt unter https://$ip_address:9443 zu erreichen.\e[0m"
 
 
 
