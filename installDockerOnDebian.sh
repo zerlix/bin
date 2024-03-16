@@ -23,7 +23,7 @@ echo -e "\e[32mFüge Apt Quellen hinzu....\e[0m"
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # apt quellen aktualisieren
 echo -e "\e[32mApt Quellen aktualisieren...\e[0m"
