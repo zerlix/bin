@@ -5,6 +5,10 @@
 # Dieses Skript setzt automatisch die korrekten Berechtigungen für das `/var/www` Verzeichnis,
 # inklusive ACLs für den Webserver-Benutzer (www-data).
 
+# Benutzer und Gruppe definieren
+USER="www-data"
+GROUP="www-data"
+TARGET_DIR="/var/www"
 
 # Prüfen ob Script als root ausgeführt wird
 if [ "$EUID" -ne 0 ]; then
@@ -17,11 +21,6 @@ if ! command -v setfacl &> /dev/null || ! command -v getfacl &> /dev/null; then
     echo "ACL-Tools nicht gefunden. Bitte installieren Sie acl: sudo apt-get install acl"
     exit 1
 fi
-
-# Benutzer und Gruppe definieren
-USER="www-data"
-GROUP="www-data"
-TARGET_DIR="/var/www"
 
 # Prüfen ob Verzeichnis existiert
 if [ ! -d "$TARGET_DIR" ]; then
