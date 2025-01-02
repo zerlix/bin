@@ -55,7 +55,5 @@ find "$TARGET_DIR" -type f -exec bash -c '
 echo -e "\nAktuelle Berechtigungen für $TARGET_DIR:"
 getfacl "$TARGET_DIR"
 
-echo -e "\nBerechtigung für eine Beispieldatei (falls vorhanden):"
-find "$TARGET_DIR" -type f -print -quit | xargs -r getfacl
 
 echo -e "\nSkript wurde erfolgreich ausgeführt!"
